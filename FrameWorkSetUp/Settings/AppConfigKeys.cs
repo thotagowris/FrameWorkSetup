@@ -11,5 +11,6 @@ namespace FrameWorkSetUp.Settings
         public const string Browser = "BrowserType";
         public const string Username = "Username";
         public const string Password = "Password";
+        public const string Website = "Website";
     }
 }

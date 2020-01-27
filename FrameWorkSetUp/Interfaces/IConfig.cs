@@ -12,5 +12,6 @@ namespace FrameWorkSetUp.Interfaces
         BrowserType GetBrowser();
         string GetUsername();
         string GetPassword();
+        string GetWebsite();
     }
 }
