@@ -17,3 +17,22 @@ C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.cspr
 C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CopyComplete
 C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.dll
 C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.pdb
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\FrameWorkSetUp.dll.config
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\FrameWorkSetUp.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\FrameWorkSetUp.pdb
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\WebDriver.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\WebDriver.Support.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\WebDriver.xml
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\WebDriver.Support.xml
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csprojAssemblyReference.cache
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CoreCompileInputs.cache
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CopyComplete
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.pdb

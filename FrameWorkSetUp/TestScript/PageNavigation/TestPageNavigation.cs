@@ -17,6 +17,7 @@ namespace FrameWorkSetUp.TestScript.PageNavigation
         public void OpenPage()
         {
             NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            Console.WriteLine("Title of page : {0}", WindowHelper.GetTitle());
         }
     }
 }
