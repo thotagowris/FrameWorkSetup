@@ -1,5 +1,6 @@
 ﻿using FrameWorkSetUp.Settings;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,21 @@ namespace FrameWorkSetUp.ComponentHelper
             else
             {
                 throw new NoSuchElementException("Element Not Found : {0}" + Locator.ToString());
+            }
+        }
+
+        public static void TakeScreenshot(string filename = "Screen.jpeg")
+        {
+            Screenshot screen = ObjectRepositiry.Driver.TakeScreenshot();
+            if (filename.Equals("Screen"))
+            {
+                string name = filename + DateTime.UtcNow.ToString("yyyy-MM-dd-mm-ss") + ".jpeg";
+                screen.SaveAsFile(filename, ScreenshotImageFormat.Jpeg);
+                return;
+            }
+            else
+            {
+                screen.SaveAsFile(filename, ScreenshotImageFormat.Jpeg);
             }
         }
     }
