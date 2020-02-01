@@ -1,4 +1,5 @@
-﻿using FrameWorkSetUp.Configuration;
+﻿using FrameWorkSetUp.ComponentHelper;
+using FrameWorkSetUp.Configuration;
 using FrameWorkSetUp.CustomException;
 using FrameWorkSetUp.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -6,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using System;
 
 namespace FrameWorkSetUp.BaseClasses
 {
@@ -71,6 +73,8 @@ namespace FrameWorkSetUp.BaseClasses
                 default:
                     throw new NoSutiableDriverFound("Driver Not Found : " + ObjectRepositiry.config.GetBrowser().ToString());
             }
+            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            ObjectRepositiry.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepositiry.config.GetPageLoadTimeout());
         }
         [AssemblyCleanup]
         public static void TearDown()
