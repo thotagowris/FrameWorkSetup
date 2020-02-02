@@ -74,7 +74,11 @@ namespace FrameWorkSetUp.BaseClasses
                     throw new NoSutiableDriverFound("Driver Not Found : " + ObjectRepositiry.config.GetBrowser().ToString());
             }
             NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            ObjectRepositiry.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepositiry.config.GetPageLoadTimeout());
+            ObjectRepositiry.Driver.Manage().Timeouts().PageLoad =
+                TimeSpan.FromSeconds(ObjectRepositiry.config.GetPageLoadTimeout());
+
+            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = 
+                TimeSpan.FromSeconds(ObjectRepositiry.config.GetElementLoadTimeout());
         }
         [AssemblyCleanup]
         public static void TearDown()

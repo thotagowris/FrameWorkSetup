@@ -17,6 +17,19 @@ namespace FrameWorkSetUp.Configuration
             return (BrowserType)Enum.Parse(typeof(BrowserType), browser);
         }
 
+        public int GetElementLoadTimeout()
+        {
+            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.ElementLoadTimeout);
+            if (timeout == null)
+            {
+                return 30;
+            }
+            else
+            {
+                return Convert.ToInt32(timeout);
+            }
+        }
+
         public int GetPageLoadTimeout()
         {
             string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.PageLoadTimeout);

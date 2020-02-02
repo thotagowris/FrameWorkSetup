@@ -13,7 +13,7 @@ namespace FrameWorkSetUp.Interfaces
         string GetUsername();
         string GetPassword();
         string GetWebsite();
-
         int GetPageLoadTimeout();
+        int GetElementLoadTimeout();
     }
 }

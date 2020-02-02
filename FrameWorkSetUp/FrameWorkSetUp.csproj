@@ -82,7 +82,7 @@
     <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\ScreenShot\TakeScreenShots.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
-    <Compile Include="TestScript\WebDriverWait\TestWebDriverWait.cs" />
+    <Compile Include="TestScript\WebDriverWaits\TestWebDriverWait.cs" />
     <Compile Include="TestScript\WebElement\TestWebElement.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
