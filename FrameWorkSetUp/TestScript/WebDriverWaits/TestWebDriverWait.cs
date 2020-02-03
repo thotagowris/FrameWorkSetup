@@ -31,7 +31,10 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
             WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, TimeSpan.FromSeconds(50));
             wait.PollingInterval = TimeSpan.FromMilliseconds(250);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
-            wait.Until(waitforSearchbox());
+            //Console.WriteLine(wait.Until(WaitforTitile()));
+            wait.Until(WaitforElement()).SendKeys("health");
+
+            //wait.Until(WaitForLastElement()).Click();
         }
 
         private Func<IWebDriver, bool> waitforSearchbox()
@@ -42,5 +45,47 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
                 return x.FindElements(By.Id("search-field-home")).Count == 1;
             });
         }
+
+        private Func<IWebDriver, string> WaitforTitile()
+        {
+            return ((x) =>
+             {
+                 if (x.Title.Contains("Main"))
+                 {
+                     return x.Title;
+                 }
+                 else
+                 {
+                     return null;
+                 }
+             });
+        }
+
+        private Func<IWebDriver, IWebElement> WaitforElement()
+        {
+            return ((x) =>
+            {
+                Console.WriteLine("Waiting for element");
+                if (x.FindElements(By.Id("search-field-home")).Count ==1)
+                
+                    return x.FindElement(By.Id("search-field-home"));
+                
+                    return null;
+                
+            });
+        }
+
+        //private Func<IWebDriver, IWebElement> WaitForLastElement()
+        //{
+        //    return ((x) =>
+        //    {
+        //        if (x.FindElements(By.CssSelector("span.input-group:nth-child(4)>span")).Count == 1)
+
+        //            return x.FindElement(By.CssSelector("span.input-group:nth-child(4)>span')]"));
+
+        //        return null;
+                
+        //    });
+        //}
     }
 }
