@@ -75,6 +75,7 @@
     <Compile Include="Settings\ObjectRepositiry.cs" />
     <Compile Include="TestScript\Button\HandleButton.cs" />
     <Compile Include="TestScript\CheckBox\TestCheckBox.cs" />
+    <Compile Include="TestScript\DefaultWait\HandleDefaultWait.cs" />
     <Compile Include="TestScript\DropDown\DropDownList.cs" />
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
@@ -97,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestScript\ExplicitWait\" />
-    <Folder Include="TestScript\ImplicitWait\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
