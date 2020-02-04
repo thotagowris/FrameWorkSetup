@@ -24,6 +24,9 @@ namespace FrameWorkSetUp.TestScript.DefaultWait
             ButtonHelper.ClickButton(By.Id("log_in"));
             ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 
+            GenericHelper.WaitForWebElement(By.Id("bug_severity"),TimeSpan.FromSeconds(50));
+            IWebElement element = GenericHelper.WaitForWebElementInPage(By.Id("bug_severity"), TimeSpan.FromSeconds(50));
+
             DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(ObjectRepositiry.Driver.FindElement(By.Id("bug_severity")));
             wait.PollingInterval = TimeSpan.FromMilliseconds(200);
             wait.Timeout = TimeSpan.FromSeconds(50);

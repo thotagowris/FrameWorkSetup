@@ -25,16 +25,18 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
         [TestMethod]
         public void TestDynamicWait()
         {
-            //NavigationHelper.NavigateToUrl("https://www.udemy.com/courses/");
-            //ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            NavigationHelper.NavigateToUrl("https://www.udemy.com/courses/");
+            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 
-            //WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, TimeSpan.FromSeconds(50));
-            //wait.PollingInterval = TimeSpan.FromMilliseconds(250);
-            //wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
-            ////Console.WriteLine(wait.Until(WaitforTitile()));
-            //wait.Until(WaitforElement()).SendKeys("health");
+            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, TimeSpan.FromSeconds(50));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            //Console.WriteLine(wait.Until(WaitforTitile()));
+            wait.Until(WaitforElement()).SendKeys("health");
+            ButtonHelper.ClickButton(By.CssSelector("span.input-group:nth-child(4) > span:nth-child(2) > button:nth-child(1)"));
             //wait.Until(WaitForButtonElement()).Click();
-            //wait.Until(WaitToSelectFromList()).Click();
+            wait.Until(WaitToSelectFromList()).Click();
+            Console.WriteLine("Title : {0}", wait.Until(WaitForTitle()));
         }
 
         private Func<IWebDriver, bool> waitforSearchbox()
@@ -75,28 +77,40 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
             });
         }
 
-        private Func<IWebDriver, IWebElement> WaitForButtonElement()
-        {
-            return ((x) =>
-            {
-                if (x.FindElements(By.XPath("//*[@id='udemy']/div[2]/div[3]/div[1]/div/div/div[3]/div/form/span/span/button/span")).Count == 1);
+        //private Func<IWebDriver, IWebElement> WaitForButtonElement()
+        //{
+        //    return ((x) =>
+        //    {
+        //        if (x.FindElements(By.XPath("//*[@id='udemy']/div[2]/div[3]/div[1]/div/div/div[3]/div/form/span/span/button/span")).Count == 1);
 
-                    return x.FindElement(By.XPath("//*[@id='udemy']/div[2]/div[3]/div[1]/div/div/div[3]/div/form/span/span/button/span"));
+        //            return x.FindElement(By.XPath("//*[@id='udemy']/div[2]/div[3]/div[1]/div/div/div[3]/div/form/span/span/button/span"));
                 
-                return null;
+        //        return null;
 
-            });
-        }
+        //    });
+        //}
 
         private Func<IWebDriver, IWebElement> WaitToSelectFromList()
         {
             return ((x) =>
             {
-                if (x.FindElements(By.XPath("//*[@id='search - result - page - v3']/div/div/div[2]/div[3]/div[1]/div[2]/div[23]/div/div/a/div/div[2]/div[1]/h4")).Count == 1) ;
-                    return x.FindElement(By.XPath("//*[@id='search - result - page - v3']/div/div/div[2]/div[3]/div[1]/div[2]/div[23]/div/div/a/div/div[2]/div[1]/h4"));
+                Console.WriteLine("Waiting for List To Display");
+                if (x.FindElements(By.CssSelector("div.course-card-list--course-card-wrapper---5ot2:nth-child(23) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > h4:nth-child(1)")).Count == 1) ;
+                    return x.FindElement(By.CssSelector("div.course-card-list--course-card-wrapper---5ot2:nth-child(23) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > h4:nth-child(1)"));
                 return null;
+            });
+        }
 
-                
+        private Func<IWebDriver, string> WaitForTitle()
+        {
+            return ((x) => 
+            {
+                Console.WriteLine("Waiting for Title to display");
+                if (x.FindElement(By.CssSelector("h1.clp-lead__title")).Text.Contains("Certified Electronic Health Records Specialist")) ;
+                {
+                    return x.FindElement(By.CssSelector("h1.clp-lead__title")).Text;
+                }
+                return null;
             });
         }
     }
