@@ -39,6 +39,24 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
             Console.WriteLine("Title : {0}", wait.Until(WaitForTitle()));
         }
 
+        [TestMethod]
+        public void TestExpCondition()
+        {
+            NavigationHelper.NavigateToUrl("https://www.udemy.com/courses/");
+            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+
+            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, TimeSpan.FromSeconds(50));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            wait.Until(ExpectedConditions.ElementExists(By.Id("search-field-home"))).SendKeys("HTML");
+            ButtonHelper.ClickButton(By.CssSelector("span.input-group:nth-child(4) > span:nth-child(2) > button:nth-child(1)"));
+            wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div.course-card-list--course-card-wrapper---5ot2:nth-child(22) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)"))).Click();
+            Console.WriteLine("Title : {0}", wait.Until(ExpectedConditions.TitleContains("u")));
+            wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div.dropdown:nth-child(6) > div:nth-child(1) > button:nth-child(1)"))).Click();
+            wait.Until(ExpectedConditions.ElementExists(By.CssSelector(".loginbox-v4__content")));
+
+        }
+
         private Func<IWebDriver, bool> waitforSearchbox()
         {
             return ((x) =>

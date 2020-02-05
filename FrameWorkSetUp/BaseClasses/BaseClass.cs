@@ -79,7 +79,9 @@ namespace FrameWorkSetUp.BaseClasses
 
             ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = 
                 TimeSpan.FromSeconds(ObjectRepositiry.config.GetElementLoadTimeout());
+            BrowserHelper.BrowserMaximize();
         }
+
         [AssemblyCleanup]
         public static void TearDown()
         {
