@@ -81,6 +81,7 @@
     <Compile Include="TestScript\DropDown\DropDownList.cs" />
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
+    <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindow.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
     <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\ScreenShot\TakeScreenShots.cs" />

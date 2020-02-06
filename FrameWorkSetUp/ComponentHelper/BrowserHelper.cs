@@ -1,6 +1,8 @@
 ﻿using FrameWorkSetUp.Settings;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,25 @@ namespace FrameWorkSetUp.ComponentHelper
         public static void Refresh()
         {
             ObjectRepositiry.Driver.Navigate().Refresh();
+        }
+
+        public static void SwitchToWindow(int index = 0)
+        {
+            ReadOnlyCollection<string> windows = ObjectRepositiry.Driver.WindowHandles;
+
+            if (windows.Count < index)
+            {
+                throw new NoSuchWindowException("Invalid Browser Window Index" + index);
+            }
+
+            ObjectRepositiry.Driver.SwitchTo().Window(windows[index]);
+            BrowserMaximize();
+        }
+
+        public static void WindowHandles()
+        {
+            ReadOnlyCollection<string> window = ObjectRepositiry.Driver.WindowHandles;
+            
         }
     }
 }
