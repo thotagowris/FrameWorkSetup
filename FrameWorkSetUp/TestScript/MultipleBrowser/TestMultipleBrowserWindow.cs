@@ -55,5 +55,23 @@ namespace FrameWorkSetUp.TestScript.MultipleBrowser
             BrowserHelper.SwitchToWindow(0);
             Console.WriteLine("Current Window handle " + ObjectRepositiry.Driver.CurrentWindowHandle);
         }
+
+        [TestMethod]
+
+        public void TestFrame()
+        {
+            NavigationHelper.NavigateToUrl("https://www.w3schools.com/js/js_popup.asp");
+
+            //ReadOnlyCollection<string> window = ObjectRepositiry.Driver.WindowHandles;
+            ButtonHelper.ClickButton(By.XPath("//*[@id='main']/div[4]/a"));
+            Thread.Sleep(4000);
+            BrowserHelper.SwitchToWindow(1);
+            Thread.Sleep(4000);
+            ObjectRepositiry.Driver.SwitchTo().Frame(ObjectRepositiry.Driver.FindElement(By.Id("iframeResult")));
+            ButtonHelper.ClickButton(By.CssSelector("body > button:nth-child(2)"));
+            ObjectRepositiry.Driver.SwitchTo().DefaultContent();
+            //BrowserHelper.SwitchToParent();
+
+        }
     }
 }

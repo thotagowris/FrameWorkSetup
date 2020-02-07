@@ -47,5 +47,22 @@ namespace FrameWorkSetUp.ComponentHelper
             ReadOnlyCollection<string> window = ObjectRepositiry.Driver.WindowHandles;
             
         }
+
+        public static void SwitchToParent()
+        {
+            var windowids = ObjectRepositiry.Driver.WindowHandles;
+            for (int i = windowids.Count; i > 0; i--)
+            {
+                ObjectRepositiry.Driver.Close();
+                ObjectRepositiry.Driver.SwitchTo().Window(windowids[i]);
+            }
+            ObjectRepositiry.Driver.SwitchTo().Window(windowids[0]);
+        }
+
+        public static void SwitchToFrame(By Locator)
+        {
+            ObjectRepositiry.Driver.SwitchTo().Frame(ObjectRepositiry.Driver.FindElement(Locator));
+
+        }
     }
 }
