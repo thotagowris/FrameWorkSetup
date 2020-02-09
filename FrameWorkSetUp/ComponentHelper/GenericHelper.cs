@@ -96,5 +96,16 @@ namespace FrameWorkSetUp.ComponentHelper
 
             });
         }
+
+        public static WebDriverWait GetWebdriverWait(TimeSpan timeout)
+        {
+            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, timeout)
+            {
+                PollingInterval = TimeSpan.FromMilliseconds(500),
+            };
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
+            return wait;
+        }
     }
 }
