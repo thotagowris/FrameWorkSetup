@@ -61,5 +61,44 @@ namespace FrameWorkSetUp.TestScript.Mouse_Action
 
             Thread.Sleep(2000);
         }
+
+        [TestMethod]
+        public void TestKeyBoard()
+        {
+            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            var act = new Actions(ObjectRepositiry.Driver);
+            //act.KeyDown(Keys.LeftControl)
+            //.SendKeys("t")
+            //.KeyUp(Keys.LeftControl)
+            //.Build()
+            //.Perform();
+
+            //act.KeyDown(Keys.LeftControl)
+            //    .KeyDown(Keys.LeftShift)
+            //    .SendKeys("a")
+            //    .KeyUp(Keys.LeftShift)
+            //    .KeyUp(Keys.LeftControl)
+            //    .Build()
+            //    .Perform();
+
+            //act.KeyDown(Keys.LeftAlt)
+            //    .SendKeys("f")
+            //    .SendKeys("x")
+            //    .Build()
+            //    .Perform();
+
+            IWebElement ele = ObjectRepositiry.Driver.FindElement(By.Id("quicksearch_top"));
+            IWebElement ele2 = ObjectRepositiry.Driver.FindElement(By.Id("quicksearch_main"));
+            ele.SendKeys("test");
+
+            act.KeyDown(ele2, Keys.LeftShift)
+                .SendKeys(ele2,"f")
+                .SendKeys(ele2,"x")
+                .KeyUp(ele2,Keys.LeftShift)
+                .Build()
+                .Perform();
+
+            Thread.Sleep(5000);
+        }
     }
 }
