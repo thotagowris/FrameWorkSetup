@@ -73,6 +73,9 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="PageObject\EnterBug.cs" />
+    <Compile Include="PageObject\HomePage.cs" />
+    <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepositiry.cs" />
     <Compile Include="TestScript\AutoSuggest\TestAutoSuggest.cs" />
@@ -83,6 +86,7 @@
     <Compile Include="TestScript\DropDown\DropDownList.cs" />
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
+    <Compile Include="TestScript\JavaScript\TestJavaScriptClass.cs" />
     <Compile Include="TestScript\Mouse Action\TestMouseAction.cs" />
     <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindow.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />

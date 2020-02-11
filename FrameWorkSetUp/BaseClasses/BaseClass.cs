@@ -31,10 +31,11 @@ namespace FrameWorkSetUp.BaseClasses
 
         private static InternetExplorerOptions GetIEOptions()
         {
-            InternetExplorerOptions option = new InternetExplorerOptions();
-            option.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-            option.EnsureCleanSession = true;
-            return option;
+            InternetExplorerOptions options = new InternetExplorerOptions();
+            options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            options.EnsureCleanSession = true;
+            options.ElementScrollBehavior = InternetExplorerElementScrollBehavior.Bottom;
+            return options;
         }
         private static IWebDriver GetChromeDriver()
         {
