@@ -1,5 +1,7 @@
-﻿using FrameWorkSetUp.Settings;
+﻿using FrameWorkSetUp.BaseClasses;
+using FrameWorkSetUp.Settings;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +10,44 @@ using System.Threading.Tasks;
 
 namespace FrameWorkSetUp.PageObject
 {
-    public class LoginPage
+    public class LoginPage : PageBase
     {
+        private IWebDriver driver;
         #region WebElement
 
-        private By LoginTextBox = By.Id("Bugzilla_login");
-        private By PassTextBox = By.Id("Bugzilla_password");
-        private By LoginButton = By.Id("log_in");
-        private By HomeLink = By.LinkText("Home");
+        [FindsBy(How = How.Id, Using ="Bugzilla_login") ]
+        private IWebElement LoginTextBox;
+
+        [FindsBy(How = How.Id, Using = "Bugzilla_password")]
+        private IWebElement PassTextBox;
+
+        [FindsBy(How = How.Id, Using = "log_in")]
+        [CacheLookup]
+        private IWebElement LoginButton;
+
+        [FindsBy(How = How.LinkText, Using = "Home")]
+        private IWebElement HomeLink;
+
+        //private By LoginTextBox = By.Id("Bugzilla_login");
+        //private By PassTextBox = By.Id("Bugzilla_password");
+        //private By LoginButton = By.Id("log_in");
+        //private By HomeLink = By.LinkText("Home");
         #endregion
+
+       public LoginPage(IWebDriver _driver) : base(_driver)
+        {
+            this.driver = _driver;
+        }
+
 
         #region Action
 
-        public void Login(string username, string password)
+        public BugDetail Login(string username, string password)
         {
-            ObjectRepositiry.Driver.FindElement(LoginTextBox).SendKeys(username);
-            ObjectRepositiry.Driver.FindElement(PassTextBox).SendKeys(password);
-            ObjectRepositiry.Driver.FindElement(LoginButton).Click();
+            LoginTextBox.SendKeys(username);
+            PassTextBox.SendKeys(password);
+            LoginButton.Click();
+            return new BugDetail(driver);
 
         }
         #endregion
@@ -32,7 +55,7 @@ namespace FrameWorkSetUp.PageObject
         #region Navigation
         public void NavigateToHome()
         {
-            ObjectRepositiry.Driver.FindElement(HomeLink).Click();
+            HomeLink.Click();
         }
         #endregion
     }

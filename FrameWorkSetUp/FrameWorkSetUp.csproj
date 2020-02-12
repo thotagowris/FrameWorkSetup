@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\BaseClass.cs" />
+    <Compile Include="BaseClasses\PageBase.cs" />
     <Compile Include="ComponentHelper\BrowserHelper.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckBoxHelper.cs" />
@@ -73,7 +74,10 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
-    <Compile Include="PageObject\EnterBug.cs" />
+    <Compile Include="PageObject\BugDetail.cs" />
+    <Compile Include="PageObject\Generic PageObject\BugDetailGeneric.cs" />
+    <Compile Include="PageObject\Generic PageObject\HomePageGeneric.cs" />
+    <Compile Include="PageObject\Generic PageObject\LoginPageGeneric.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
@@ -90,6 +94,7 @@
     <Compile Include="TestScript\Mouse Action\TestMouseAction.cs" />
     <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindow.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestScript\PageObject\TestPageObject.cs" />
     <Compile Include="TestScript\Popups\TestPopups.cs" />
     <Compile Include="TestScript\RadioButton\HandleRadioButton.cs" />
     <Compile Include="TestScript\ScreenShot\TakeScreenShots.cs" />

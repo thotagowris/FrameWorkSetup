@@ -27,5 +27,12 @@ namespace FrameWorkSetUp.ComponentHelper
             return select.Options.Select((x) => x.Text).ToList();
 
         }
+
+        public static void SelectElement(IWebElement element, string visibletext)
+        {
+            select = new SelectElement(element);
+            select.SelectByValue(visibletext);
+
+        }
     }
 }
