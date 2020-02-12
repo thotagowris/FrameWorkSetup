@@ -31,7 +31,6 @@ C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStu
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\WebDriver.xml
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\WebDriver.Support.xml
-C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csprojAssemblyReference.cache
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CoreCompileInputs.cache
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CopyComplete
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.dll

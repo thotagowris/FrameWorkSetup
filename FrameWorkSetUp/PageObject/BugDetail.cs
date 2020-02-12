@@ -17,7 +17,23 @@ namespace FrameWorkSetUp.PageObject
         #region WebElement
 
         [FindsBy(How = How.Id, Using = "bug_severity")]
-        private IWebElement severityDropDown;
+        private IWebElement SeverityDropDown;
+
+        [FindsBy(How = How.Id, Using = "rep_platform")]
+        private IWebElement Hardware;
+
+        [FindsBy(How = How.Id, Using = "op_sys")]
+        private IWebElement OpSys;
+
+        [FindsBy(How = How.Id, Using = "short_desc")]
+        private IWebElement ShortDesc;
+
+        [FindsBy(How = How.Id, Using = "comment")]
+        private IWebElement Comment;
+
+        [FindsBy(How = How.Id, Using = "commit")]
+        private IWebElement Commit;
+
 
         public BugDetail(IWebDriver _driver) : base(_driver)
         {
@@ -26,7 +42,7 @@ namespace FrameWorkSetUp.PageObject
 
         //private By severityDropDown = By.Id("bug_severity");
 
-        #endregion
+        #endregion 
 
 
         #region Action
@@ -34,9 +50,40 @@ namespace FrameWorkSetUp.PageObject
 
         public void SelectFromSeverity(string value)
         {
-            ComboBoxHelper.SelectElement(severityDropDown, value);
+            ComboBoxHelper.SelectElement(SeverityDropDown, value);
             
         }
+
+        public void SelectFromCombo(string severity = null, string hardware = null, string os = null)
+        {
+            if (severity != null)
+                ComboBoxHelper.SelectElement(SeverityDropDown, severity);
+            if (hardware != null)
+                ComboBoxHelper.SelectElement(Hardware, hardware);
+            if (os != null)
+                ComboBoxHelper.SelectElement(OpSys, os);
+        }
+
+        public void TypeIn(string summary = null, string desc = null)
+        {
+            if (summary != null)
+                ShortDesc.SendKeys(summary);
+            if (desc != null)
+                Comment.SendKeys(desc);
+        }
+
+        public void ClickSubmit()
+        {
+            Commit.Click();
+            GenericHelper.WaitForWebElementInPage(By.Id("bugzilla-body"), TimeSpan.FromSeconds(30));
+        }
+
+        public new HomePage Logout()
+        {
+            base.Logout();
+            return new HomePage(driver);
+        }
+
         #endregion
     }
 }
