@@ -35,6 +35,10 @@ namespace FrameWorkSetUp.PageObject
         private IWebElement Commit;
 
 
+        //Don't use the below code as this page no longer exists 
+        //[FindsBy(How = How.LinkText, Using = "Testng")]
+        //private IWebElement Testng;
+
         public BugDetail(IWebDriver _driver) : base(_driver)
         {
             this.driver = _driver;
@@ -85,5 +89,18 @@ namespace FrameWorkSetUp.PageObject
         }
 
         #endregion
+
+       // #region Navigation
+
+        //Don't use the below code as this page no longer exists
+
+        //public BugDetail NavigateToDetail()
+        //{
+        //    Testng.Click();
+        //    GenericHelper.WaitForWebElementInPage(By.Id("component"), TimeSpan.FromSeconds(30));
+        //    return new BugDetail(driver);
+        //}
+
+        //#endregion
     }
 }

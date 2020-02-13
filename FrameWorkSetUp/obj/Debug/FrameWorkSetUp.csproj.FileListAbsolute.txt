@@ -35,3 +35,4 @@ C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.cspr
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CopyComplete
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.dll
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.pdb
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csprojAssemblyReference.cache
