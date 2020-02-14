@@ -24,9 +24,9 @@ namespace FrameWorkSetUp.BaseClasses
 
         protected void Logout()
         {
-            if (GenericHelper.IsElelementPresent(By.XPath("//*[@id='header']/ul[1]/li[10]/a")))
+            if (GenericHelper.IsElelementPresent(By.CssSelector("ul.links:nth-child(4) > li:nth-child(11) > a:nth-child(2)")))
             {
-                ButtonHelper.ClickButton(By.XPath("//*[@id='header']/ul[1]/li[10]/a"));
+                ButtonHelper.ClickButton(By.CssSelector("ul.links:nth-child(4) > li:nth-child(11) > a:nth-child(2)"));
             }
         }
 

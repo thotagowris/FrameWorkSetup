@@ -34,6 +34,9 @@ namespace FrameWorkSetUp.PageObject
         [FindsBy(How = How.Id, Using = "commit")]
         private IWebElement Commit;
 
+        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/ul[1]/li[2]/a")]
+        private IWebElement NewBug;
+
 
         //Don't use the below code as this page no longer exists 
         //[FindsBy(How = How.LinkText, Using = "Testng")]
@@ -86,6 +89,11 @@ namespace FrameWorkSetUp.PageObject
         {
             base.Logout();
             return new HomePage(driver);
+        }
+
+        public void ClickOnNew()
+        {
+            NewBug.Click();
         }
 
         #endregion
