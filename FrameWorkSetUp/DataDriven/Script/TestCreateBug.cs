@@ -44,6 +44,22 @@ namespace FrameWorkSetUp.DataDriven.Script
             ePage.Logout();
             Thread.Sleep(5000);
         }
+
+        [TestMethod]
+        public void TestBugDdf()
+        {
+            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            HomePage hpPage = new HomePage(ObjectRepositiry.Driver);
+            LoginPage loginPage = hpPage.NavigateToLogin();
+            var ePage = loginPage.Login(ObjectRepositiry.config.GetUsername(), ObjectRepositiry.config.GetPassword());
+            //var bugPage = ePage.NavigateToDetail();
+            //ePage.SelectFromCombo(TestContext.DataRow["Severity"].ToString(), TestContext.DataRow["HardWare"].ToString(), TestContext.DataRow["OS"].ToString());
+            //ePage.TypeIn(TestContext.DataRow["Summary"].ToString(), TestContext.DataRow["Desc"].ToString());
+            //ePage.ClickOnNew();
+            //ePage.
+            ePage.Logout();
+            Thread.Sleep(5000);
+        }
     }
 
 }

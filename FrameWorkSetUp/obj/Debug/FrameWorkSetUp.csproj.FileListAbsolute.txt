@@ -35,4 +35,10 @@ C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.cspr
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csproj.CopyComplete
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.dll
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.pdb
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.pdb
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.xml
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.csprojAssemblyReference.cache
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.xml
