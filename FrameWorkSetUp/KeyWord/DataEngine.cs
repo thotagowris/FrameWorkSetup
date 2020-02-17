@@ -50,7 +50,7 @@ namespace FrameWorkSetUp.KeyWord
             }
         }
 
-        private void PerformAction(string  , string locatorType, string locatorValue, params string[] args) 
+        private void PerformAction(string keyword, string locatorType, string locatorValue, params string[] args) 
         {
             switch (locatorType)
             {
