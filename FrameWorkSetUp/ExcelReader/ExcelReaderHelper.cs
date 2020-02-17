@@ -20,7 +20,7 @@ namespace FrameWorkSetUp.ExcelReader
             _cathe = new Dictionary<string, IExcelDataReader>();
         }
 
-        public static object GetCellData(string xlpath, string sheetName, int row, int column)
+        private static IExcelDataReader GetExcelReader(string xlpath, string sheetName)
         {
             if (_cathe.ContainsKey(sheetName))
             {
@@ -32,8 +32,19 @@ namespace FrameWorkSetUp.ExcelReader
                 reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
                 _cathe.Add(sheetName, reader);
             }
+            return reader;
+        }
 
-            DataTable table = reader.AsDataSet().Tables[sheetName];
+        public static int GetTotalRows(string xlpath, string sheetName)
+        {
+            IExcelDataReader _reader = GetExcelReader(xlpath, sheetName);
+            return _reader.AsDataSet().Tables[sheetName].Rows.Count;
+        }
+
+        public static object GetCellData(string xlpath, string sheetName, int row, int column)
+        {
+            IExcelDataReader _reader = GetExcelReader(xlpath, sheetName);
+            DataTable table = _reader.AsDataSet().Tables[sheetName];
             return GetData(table.Rows[row][column].GetType(), table.Rows[row][column]);
         }
 

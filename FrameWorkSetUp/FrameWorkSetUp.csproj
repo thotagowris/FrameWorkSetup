@@ -81,11 +81,13 @@
     <Compile Include="ComponentHelper\WindowHelper.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
+    <Compile Include="CustomException\NoSuchKeyWordFoundException.cs" />
     <Compile Include="CustomException\NoSutiableDriverFound.cs" />
     <Compile Include="DataDriven\Script\TestCreateBug.cs" />
     <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="ExcelReader\TestExcelData.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="KeyWord\DataEngine.cs" />
     <Compile Include="PageObject\BugDetail.cs" />
     <Compile Include="PageObject\Generic PageObject\BugDetailGeneric.cs" />
     <Compile Include="PageObject\Generic PageObject\HomePageGeneric.cs" />

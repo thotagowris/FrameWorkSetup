@@ -1,4 +1,5 @@
 ﻿using FrameWorkSetUp.ComponentHelper;
+using FrameWorkSetUp.ExcelReader;
 using FrameWorkSetUp.PageObject;
 using FrameWorkSetUp.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -48,6 +49,7 @@ namespace FrameWorkSetUp.DataDriven.Script
         [TestMethod]
         public void TestBugDdf()
         {
+            string xlPath = @"C:\Development\Repos\FrameWorkSetUp\ExcelData.xlsx";
             NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
             HomePage hpPage = new HomePage(ObjectRepositiry.Driver);
             LoginPage loginPage = hpPage.NavigateToLogin();
@@ -56,7 +58,8 @@ namespace FrameWorkSetUp.DataDriven.Script
             //ePage.SelectFromCombo(TestContext.DataRow["Severity"].ToString(), TestContext.DataRow["HardWare"].ToString(), TestContext.DataRow["OS"].ToString());
             //ePage.TypeIn(TestContext.DataRow["Summary"].ToString(), TestContext.DataRow["Desc"].ToString());
             //ePage.ClickOnNew();
-            //ePage.
+            ePage.SelectFromCombo(ExcelReaderHelper.GetCellData(xlPath, "TestExcelData", 1, 0).ToString(), ExcelReaderHelper.GetCellData(xlPath, "TestExcelData", 1, 1).ToString(), ExcelReaderHelper.GetCellData(xlPath, "TestExcelData", 1, 2).ToString());
+            ePage.TypeIn(ExcelReaderHelper.GetCellData(xlPath, "TestExcelData", 1, 3).ToString(), ExcelReaderHelper.GetCellData(xlPath, "TestExcelData", 1, 4).ToString());
             ePage.Logout();
             Thread.Sleep(5000);
         }

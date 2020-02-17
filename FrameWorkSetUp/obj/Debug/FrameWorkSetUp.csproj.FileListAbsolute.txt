@@ -42,3 +42,9 @@ C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\obj\Debug\FrameWorkSetUp.cspr
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.dll
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\Users\Gowri Thota\FrameWorkSetup\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\bin\Debug\ExcelDataReader.dll
+C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\bin\Debug\ExcelDataReader.pdb
+C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\bin\Debug\ExcelDataReader.xml
+C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\bin\Debug\ExcelDataReader.DataSet.xml

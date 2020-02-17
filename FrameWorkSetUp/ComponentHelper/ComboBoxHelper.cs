@@ -21,6 +21,12 @@ namespace FrameWorkSetUp.ComponentHelper
             select.SelectByValue(VisibleText);
         }
 
+        public static void SelectElementByValue(By locator, string valueTexts)
+        {
+            select = new SelectElement(GenericHelper.GetElement(locator));
+            select.SelectByValue(valueTexts);
+        }
+
         public static IList<string> GetAllItem(By Locator)
         {
             select = new SelectElement(GenericHelper.GetElement(Locator));
