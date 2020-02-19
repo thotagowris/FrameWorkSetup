@@ -105,6 +105,7 @@
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\JavaScript\TestJavaScriptClass.cs" />
+    <Compile Include="TestScript\Keyword\TestKeywordDriven.cs" />
     <Compile Include="TestScript\Mouse Action\TestMouseAction.cs" />
     <Compile Include="TestScript\MultipleBrowser\TestMultipleBrowserWindow.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
