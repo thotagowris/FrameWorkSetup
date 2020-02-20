@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,7 +16,8 @@ namespace FrameWorkSetUp.TestScript.FileUpload
     [TestClass]
     public class TestFileUploadAction
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Smoke")]
+        [DeploymentItem("Resources", "Test")]
         public void TestUpload()
         {
             //[TestMethod, TestCategory("Smoke")]
@@ -29,27 +31,29 @@ namespace FrameWorkSetUp.TestScript.FileUpload
             ButtonHelper.ClickButton(By.CssSelector("#attachment_false > input:nth-child(1)"));
             IWebElement elem = ObjectRepositiry.Driver.FindElement(By.XPath("//*[@id='data']"));
             // Mention the path of file to do the upload
-            elem.SendKeys(@"C:\Users\Gowri Thota\FrameWorkSetup\ExcelData.xlsx");
+            elem.SendKeys(@"C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\Resources\ExcelData.xlsx");
             ////GenericHelper.WaitForWebElement(By.CssSelector("data"), TimeSpan.FromSeconds(30));
             ////ButtonHelper.ClickButton(By.CssSelector("#data"));
+            ///
+            //Console.WriteLine(@"C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\Resources\ExcelData.xlsx");
 
-            var processinfo = new ProcessStartInfo()
-            {
-                FileName = @"C:\Users\Gowri Thota\FrameWorkSetup\File-Upload\FileUpload.exe",
-                Arguments = @"C:\Users\Gowri Thota\FrameWorkSetup\ExcelData.xlsx"
-            };
+            //var processinfo = new ProcessStartInfo()
+            //{
+            //    FileName = "FileUpoad.exe",
+            //    Arguments = "\"" + Directory.GetCurrentDirectory() + @"\ExcelData.xlsx" + "\""
+            //};
 
-            //processinfo.FileName = @"F:\Auto\FileUpload.exe";
-            //processinfo.Arguments = @"C:\downloads\ExcelData.xlsx";
+            ////processinfo.FileName = @"F:\Auto\FileUpload.exe";
+            ////processinfo.Arguments = @"C:\downloads\ExcelData.xlsx";
 
-            //Process process = Process.Start(processinfo);
-            //process.WaitForExit();
-            //process.Close();
+            ////Process process = Process.Start(processinfo);
+            ////process.WaitForExit();
+            ////process.Close();
 
-            using (var process = Process.Start(processinfo))
-            {
-                process.WaitForExit();
-            }
+            //using (var process = Process.Start(processinfo))
+            //{
+            //    process.WaitForExit();
+            //}
 
 
             Thread.Sleep(5000);
