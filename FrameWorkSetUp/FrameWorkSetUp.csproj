@@ -119,6 +119,7 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepositiry.cs" />
+    <Compile Include="StepDefinition\TestFeature.cs" />
     <Compile Include="TestScript\AutoSuggest\TestAutoSuggest.cs" />
     <Compile Include="TestScript\BrowserActions\TestBrowserActions.cs" />
     <Compile Include="TestScript\Button\HandleButton.cs" />
@@ -148,6 +149,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="FeatureFiles\TestFeature.feature" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
