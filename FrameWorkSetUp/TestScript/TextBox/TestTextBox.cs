@@ -16,7 +16,7 @@ namespace FrameWorkSetUp.TestScript.TextBox
         [TestMethod]
         public void TextBox()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             LinkHelper.ClickLink(By.LinkText("File a Bug"));
             //IWebElement ele = ObjectRepositiry.Driver.FindElement(By.Id("Bugzilla_login"));
             //ele.SendKeys(ObjectRepositiry.config.GetUsername());
@@ -24,8 +24,8 @@ namespace FrameWorkSetUp.TestScript.TextBox
             //ele.SendKeys(ObjectRepositiry.config.GetPassword());
             //ele = ObjectRepositiry.Driver.FindElement(By.Id("Bugzilla_login"));
             //ele.Clear();
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepositiry.config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepositiry.config.GetPassword());
+            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
             TextBoxHelper.ClearTextBox(By.Id("Bugzilla_login"));
 
 

@@ -16,7 +16,7 @@ namespace FrameWorkSetUp.TestScript.HyperLink
         [TestMethod]
         public void ClickLink()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             //IWebElement element = ObjectRepositiry.Driver.FindElement(By.LinkText("File a Bug"));
             //element.Click();
 

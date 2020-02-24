@@ -18,12 +18,12 @@ namespace FrameWorkSetUp.TestScript.JavaScript
         {
             NavigationHelper.NavigateToUrl("https://www.udemy.com/");
             //LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            IJavaScriptExecutor executor = ((IJavaScriptExecutor)ObjectRepositiry.Driver);
+            IJavaScriptExecutor executor = ((IJavaScriptExecutor)ObjectRepository.Driver);
             //executor.ExecuteScript("document.getElementById('Bugzilla_login').value='thota.gowri@gmail.com'");
             //executor.ExecuteScript("document.getElementById('Bugzilla_password').value='chaithanya'");
             //executor.ExecuteScript("document.getElementById('log_in').click()");
 
-            IWebElement element = ObjectRepositiry.Driver.FindElement(By.XPath("/html/body/div[2]/div[3]/div[4]/div/div[2]/div[1]/div/div/a/div/div"));
+            IWebElement element = ObjectRepository.Driver.FindElement(By.XPath("/html/body/div[2]/div[3]/div[4]/div/div[2]/div[1]/div/div/a/div/div"));
             executor.ExecuteScript("window.scrollTo(0, " + element.Location.Y +")");
             element.Click();
         }

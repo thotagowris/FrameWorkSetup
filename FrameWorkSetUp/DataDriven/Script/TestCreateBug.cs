@@ -34,10 +34,10 @@ namespace FrameWorkSetUp.DataDriven.Script
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", @"C:\Users\Gowri Thota\FrameWorkSetup\CreateData.csv", "CreateData#csv", DataAccessMethod.Sequential)]
         public void TestBug()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            HomePage hpPage = new HomePage(ObjectRepositiry.Driver);
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            HomePage hpPage = new HomePage(ObjectRepository.Driver);
             LoginPage loginPage = hpPage.NavigateToLogin();
-            var ePage = loginPage.Login(ObjectRepositiry.config.GetUsername(), ObjectRepositiry.config.GetPassword());
+            var ePage = loginPage.Login(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             //var bugPage = ePage.NavigateToDetail();
             ePage.SelectFromCombo(TestContext.DataRow["Severity"].ToString(), TestContext.DataRow["HardWare"].ToString(), TestContext.DataRow["OS"].ToString());
             ePage.TypeIn(TestContext.DataRow["Summary"].ToString(), TestContext.DataRow["Desc"].ToString());
@@ -50,10 +50,10 @@ namespace FrameWorkSetUp.DataDriven.Script
         public void TestBugDdf()
         {
             string xlPath = @"C:\Development\Repos\FrameWorkSetUp\ExcelData.xlsx";
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            HomePage hpPage = new HomePage(ObjectRepositiry.Driver);
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            HomePage hpPage = new HomePage(ObjectRepository.Driver);
             LoginPage loginPage = hpPage.NavigateToLogin();
-            var ePage = loginPage.Login(ObjectRepositiry.config.GetUsername(), ObjectRepositiry.config.GetPassword());
+            var ePage = loginPage.Login(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             //var bugPage = ePage.NavigateToDetail();
             //ePage.SelectFromCombo(TestContext.DataRow["Severity"].ToString(), TestContext.DataRow["HardWare"].ToString(), TestContext.DataRow["OS"].ToString());
             //ePage.TypeIn(TestContext.DataRow["Summary"].ToString(), TestContext.DataRow["Desc"].ToString());

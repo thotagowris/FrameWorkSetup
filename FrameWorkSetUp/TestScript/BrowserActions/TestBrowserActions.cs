@@ -16,7 +16,7 @@ namespace FrameWorkSetUp.TestScript.BrowserActions
         [TestMethod]
         public void TestActions()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             //BrowserHelper.BrowserMaximize();
             //ObjectRepositiry.Driver.Manage().Window.Maximize();
             ButtonHelper.ClickButton(By.Id("enter_bug"));

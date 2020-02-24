@@ -16,10 +16,10 @@ namespace FrameWorkSetUp.TestScript.CheckBox
         [TestMethod]
         public void TestBox()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepositiry.config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepositiry.config.GetPassword());
+            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
             //IWebElement element = ObjectRepositiry.Driver.FindElement(By.Id("Bugzilla_restrictlogin"));
             //element.Click();
             

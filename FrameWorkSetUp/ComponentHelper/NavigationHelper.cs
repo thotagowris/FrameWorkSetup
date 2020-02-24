@@ -11,7 +11,7 @@ namespace FrameWorkSetUp.ComponentHelper
     {
         public static void NavigateToUrl(string Url)
         {
-            ObjectRepositiry.Driver.Navigate().GoToUrl(Url);
+            ObjectRepository.Driver.Navigate().GoToUrl(Url);
         }
     }
 }

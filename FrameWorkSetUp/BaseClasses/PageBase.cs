@@ -19,7 +19,7 @@ namespace FrameWorkSetUp.BaseClasses
 
         public PageBase(IWebDriver driver)
         {
-            PageFactory.InitElements(ObjectRepositiry.Driver, this);
+            PageFactory.InitElements(ObjectRepository.Driver, this);
         }
 
         protected void Logout()

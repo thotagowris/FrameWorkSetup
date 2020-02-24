@@ -13,55 +13,55 @@ namespace FrameWorkSetUp.ComponentHelper
     {
         public static void BrowserMaximize()
         {
-            ObjectRepositiry.Driver.Manage().Window.Maximize();
+            ObjectRepository.Driver.Manage().Window.Maximize();
         }
 
         public static void GoBack()
         {
-            ObjectRepositiry.Driver.Navigate().Back();
+            ObjectRepository.Driver.Navigate().Back();
         }
         public static void Forward()
         {
-            ObjectRepositiry.Driver.Navigate().Forward();
+            ObjectRepository.Driver.Navigate().Forward();
         }
         public static void Refresh()
         {
-            ObjectRepositiry.Driver.Navigate().Refresh();
+            ObjectRepository.Driver.Navigate().Refresh();
         }
 
         public static void SwitchToWindow(int index = 0)
         {
-            ReadOnlyCollection<string> windows = ObjectRepositiry.Driver.WindowHandles;
+            ReadOnlyCollection<string> windows = ObjectRepository.Driver.WindowHandles;
 
             if (windows.Count < index)
             {
                 throw new NoSuchWindowException("Invalid Browser Window Index" + index);
             }
 
-            ObjectRepositiry.Driver.SwitchTo().Window(windows[index]);
+            ObjectRepository.Driver.SwitchTo().Window(windows[index]);
             BrowserMaximize();
         }
 
         public static void WindowHandles()
         {
-            ReadOnlyCollection<string> window = ObjectRepositiry.Driver.WindowHandles;
+            ReadOnlyCollection<string> window = ObjectRepository.Driver.WindowHandles;
             
         }
 
         public static void SwitchToParent()
         {
-            var windowids = ObjectRepositiry.Driver.WindowHandles;
+            var windowids = ObjectRepository.Driver.WindowHandles;
             for (int i = windowids.Count; i > 0; i--)
             {
-                ObjectRepositiry.Driver.Close();
-                ObjectRepositiry.Driver.SwitchTo().Window(windowids[i]);
+                ObjectRepository.Driver.Close();
+                ObjectRepository.Driver.SwitchTo().Window(windowids[i]);
             }
-            ObjectRepositiry.Driver.SwitchTo().Window(windowids[0]);
+            ObjectRepository.Driver.SwitchTo().Window(windowids[0]);
         }
 
         public static void SwitchToFrame(By Locator)
         {
-            ObjectRepositiry.Driver.SwitchTo().Frame(ObjectRepositiry.Driver.FindElement(Locator));
+            ObjectRepository.Driver.SwitchTo().Frame(ObjectRepository.Driver.FindElement(Locator));
 
         }
     }

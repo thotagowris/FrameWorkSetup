@@ -17,7 +17,7 @@ namespace FrameWorkSetUp.ComponentHelper
         {
             try
             {
-            return ObjectRepositiry.Driver.FindElements(Locator).Count == 1;
+            return ObjectRepository.Driver.FindElements(Locator).Count == 1;
             }
             catch (Exception)
             {
@@ -29,7 +29,7 @@ namespace FrameWorkSetUp.ComponentHelper
         public static IWebElement GetElement(By Locator)
         {
             if (IsElelementPresent(Locator))
-                return ObjectRepositiry.Driver.FindElement(Locator);
+                return ObjectRepository.Driver.FindElement(Locator);
             else
             {
                 throw new NoSuchElementException("Element Not Found : {0}" + Locator.ToString());
@@ -38,7 +38,7 @@ namespace FrameWorkSetUp.ComponentHelper
 
         public static void TakeScreenshot(string filename = "Screen.jpeg")
         {
-            Screenshot screen = ObjectRepositiry.Driver.TakeScreenshot();
+            Screenshot screen = ObjectRepository.Driver.TakeScreenshot();
             if (filename.Equals("Screen"))
             {
                 string name = filename + DateTime.UtcNow.ToString("yyyy-MM-dd-mm-ss") + ".jpeg";
@@ -53,12 +53,12 @@ namespace FrameWorkSetUp.ComponentHelper
 
         public static bool WaitForWebElement(By Locator, TimeSpan timeout)
         {
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
-            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, timeout);
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout);
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
             bool flag = wait.Until(WaitforWebElementFunc(Locator));
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepositiry.config.GetElementLoadTimeout());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
             return flag;
         }
 
@@ -76,12 +76,12 @@ namespace FrameWorkSetUp.ComponentHelper
 
         public static IWebElement WaitForWebElementInPage(By Locator, TimeSpan timeout)
         {
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
-            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, timeout);
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout);
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
             IWebElement flag = wait.Until(WaitforWebElementInPageFunc(Locator));
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepositiry.config.GetElementLoadTimeout());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
             return flag;
         }
         private static Func<IWebDriver, IWebElement> WaitforWebElementInPageFunc(By Locator)
@@ -99,8 +99,8 @@ namespace FrameWorkSetUp.ComponentHelper
 
         public static WebDriverWait GetWebdriverWait(TimeSpan timeout)
         {
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
-            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, timeout)
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout)
             {
                 PollingInterval = TimeSpan.FromMilliseconds(500),
             };

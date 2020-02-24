@@ -19,8 +19,8 @@ namespace FrameWorkSetUp.TestScript.AutoSuggest
         public void TestAutoSug()
         {
             NavigationHelper.NavigateToUrl("https://demos.telerik.com/kendo-ui/autocomplete/index");
-            Actions act = new Actions(ObjectRepositiry.Driver);
-            IWebElement ele = ObjectRepositiry.Driver.FindElement(By.Id("countries"));
+            Actions act = new Actions(ObjectRepository.Driver);
+            IWebElement ele = ObjectRepository.Driver.FindElement(By.Id("countries"));
             ele.SendKeys("a");
             Thread.Sleep(2000);
             // Wait for auto suggest list

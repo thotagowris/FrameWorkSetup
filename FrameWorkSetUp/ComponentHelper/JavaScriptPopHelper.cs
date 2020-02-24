@@ -14,7 +14,7 @@ namespace FrameWorkSetUp.ComponentHelper
         {
             try
             {
-                ObjectRepositiry.Driver.SwitchTo().Alert();
+                ObjectRepository.Driver.SwitchTo().Alert();
                 return true;
             }
             catch (NoAlertPresentException)
@@ -28,14 +28,14 @@ namespace FrameWorkSetUp.ComponentHelper
         {
             if (!IsPopUpPresent())
                 return "";
-            return ObjectRepositiry.Driver.SwitchTo().Alert().Text;
+            return ObjectRepository.Driver.SwitchTo().Alert().Text;
         }
 
         public static void ClickOnPopUp()
         {
             if (!IsPopUpPresent())
                 return;
-            ObjectRepositiry.Driver.SwitchTo().Alert().Accept();
+            ObjectRepository.Driver.SwitchTo().Alert().Accept();
 
         }
 
@@ -43,14 +43,14 @@ namespace FrameWorkSetUp.ComponentHelper
         {
             if (!IsPopUpPresent())
                 return;
-            ObjectRepositiry.Driver.SwitchTo().Alert().Dismiss();
+            ObjectRepository.Driver.SwitchTo().Alert().Dismiss();
         }
 
         public static void sendKeys(string text)
         {
             if (!IsPopUpPresent())
                 return;
-            ObjectRepositiry.Driver.SwitchTo().Alert().SendKeys(text);
+            ObjectRepository.Driver.SwitchTo().Alert().SendKeys(text);
         }
     }
 }

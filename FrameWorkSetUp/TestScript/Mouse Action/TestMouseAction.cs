@@ -19,8 +19,8 @@ namespace FrameWorkSetUp.TestScript.Mouse_Action
         public void TestContextClick()
         {
             NavigationHelper.NavigateToUrl("https://demos.telerik.com/kendo-ui/dragdrop/events");
-            Actions act = new Actions(ObjectRepositiry.Driver);
-            IWebElement ele = ObjectRepositiry.Driver.FindElement(By.Id("draggable"));
+            Actions act = new Actions(ObjectRepository.Driver);
+            IWebElement ele = ObjectRepository.Driver.FindElement(By.Id("draggable"));
             act = act.ContextClick(ele);
             IAction iact = act.Build();
             iact.Perform();
@@ -36,9 +36,9 @@ namespace FrameWorkSetUp.TestScript.Mouse_Action
         public void DragNDrop()
         {
             NavigationHelper.NavigateToUrl("https://demos.telerik.com/kendo-ui/dragdrop/events");
-            Actions act = new Actions(ObjectRepositiry.Driver);
-            IWebElement src = ObjectRepositiry.Driver.FindElement(By.Id("draggable"));
-            IWebElement tar = ObjectRepositiry.Driver.FindElement(By.Id("droptarget"));
+            Actions act = new Actions(ObjectRepository.Driver);
+            IWebElement src = ObjectRepository.Driver.FindElement(By.Id("draggable"));
+            IWebElement tar = ObjectRepository.Driver.FindElement(By.Id("droptarget"));
 
             act.DragAndDrop(src, tar)
                 .Build()
@@ -50,9 +50,9 @@ namespace FrameWorkSetUp.TestScript.Mouse_Action
         public void TestClickNHold()
         {
             NavigationHelper.NavigateToUrl("https://demos.telerik.com/kendo-ui/sortable/index");
-            Actions act = new Actions(ObjectRepositiry.Driver);
-            IWebElement ele = ObjectRepositiry.Driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[2]/div/div/ul/li[12]"));
-            IWebElement tar = ObjectRepositiry.Driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[2]/div/div/ul/li[2]"));
+            Actions act = new Actions(ObjectRepository.Driver);
+            IWebElement ele = ObjectRepository.Driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[2]/div/div/ul/li[12]"));
+            IWebElement tar = ObjectRepository.Driver.FindElement(By.XPath("/html/body/div[4]/div[2]/div[2]/div/div/ul/li[2]"));
             act.ClickAndHold(ele)
             .MoveToElement(tar,0,30)
             .Release()
@@ -65,8 +65,8 @@ namespace FrameWorkSetUp.TestScript.Mouse_Action
         [TestMethod]
         public void TestKeyBoard()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            var act = new Actions(ObjectRepositiry.Driver);
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            var act = new Actions(ObjectRepository.Driver);
             //act.KeyDown(Keys.LeftControl)
             //.SendKeys("t")
             //.KeyUp(Keys.LeftControl)
@@ -87,8 +87,8 @@ namespace FrameWorkSetUp.TestScript.Mouse_Action
             //    .Build()
             //    .Perform();
 
-            IWebElement ele = ObjectRepositiry.Driver.FindElement(By.Id("quicksearch_top"));
-            IWebElement ele2 = ObjectRepositiry.Driver.FindElement(By.Id("quicksearch_main"));
+            IWebElement ele = ObjectRepository.Driver.FindElement(By.Id("quicksearch_top"));
+            IWebElement ele2 = ObjectRepository.Driver.FindElement(By.Id("quicksearch_main"));
             ele.SendKeys("test");
 
             act.KeyDown(ele2, Keys.LeftShift)

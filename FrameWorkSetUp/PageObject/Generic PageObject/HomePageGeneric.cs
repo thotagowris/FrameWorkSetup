@@ -23,8 +23,8 @@ namespace FrameWorkSetUp.PageObject
 
         public void QuickSearch(string text)
         {
-            ObjectRepositiry.Driver.FindElement(QuickSearcTextBox).SendKeys(text);
-            ObjectRepositiry.Driver.FindElement(QuickSearchBtn).Click();
+            ObjectRepository.Driver.FindElement(QuickSearcTextBox).SendKeys(text);
+            ObjectRepository.Driver.FindElement(QuickSearchBtn).Click();
         }
 
         #endregion
@@ -33,7 +33,7 @@ namespace FrameWorkSetUp.PageObject
 
         public LoginPage NavigateToLogin()
         {
-            ObjectRepositiry.Driver.FindElement(FileABugLink).Click();
+            ObjectRepository.Driver.FindElement(FileABugLink).Click();
             return new LoginPage(driver);
         }
 

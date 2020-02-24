@@ -20,7 +20,7 @@ namespace FrameWorkSetUp.TestScript.MultipleBrowser
         public void TestMultipleBrowserWindows()
         {
             NavigationHelper.NavigateToUrl("http://uitestpractice.com/Students/Switchto");
-            ReadOnlyCollection<string> window = ObjectRepositiry.Driver.WindowHandles;
+            ReadOnlyCollection<string> window = ObjectRepository.Driver.WindowHandles;
             Console.WriteLine("Before Click");
             //Thread.Sleep(4000);
             Console.WriteLine("Number of windows open by selenium : " + window.Count);
@@ -42,18 +42,18 @@ namespace FrameWorkSetUp.TestScript.MultipleBrowser
             }
 
             BrowserHelper.SwitchToWindow(1);
-            Console.WriteLine(ObjectRepositiry.Driver.FindElement(By.Id("draggable")).Text);
-            Console.WriteLine("Current Window handle " + ObjectRepositiry.Driver.CurrentWindowHandle);
+            Console.WriteLine(ObjectRepository.Driver.FindElement(By.Id("draggable")).Text);
+            Console.WriteLine("Current Window handle " + ObjectRepository.Driver.CurrentWindowHandle);
 
             Console.WriteLine("After Close");
-            ObjectRepositiry.Driver.Close();
+            ObjectRepository.Driver.Close();
             Console.WriteLine("Number of windows open by selenium : " + window.Count);
             foreach (var item in window)
             {
                 Console.WriteLine(item);
             }
             BrowserHelper.SwitchToWindow(0);
-            Console.WriteLine("Current Window handle " + ObjectRepositiry.Driver.CurrentWindowHandle);
+            Console.WriteLine("Current Window handle " + ObjectRepository.Driver.CurrentWindowHandle);
         }
 
         [TestMethod]
@@ -67,9 +67,9 @@ namespace FrameWorkSetUp.TestScript.MultipleBrowser
             Thread.Sleep(4000);
             BrowserHelper.SwitchToWindow(1);
             Thread.Sleep(4000);
-            ObjectRepositiry.Driver.SwitchTo().Frame(ObjectRepositiry.Driver.FindElement(By.Id("iframeResult")));
+            ObjectRepository.Driver.SwitchTo().Frame(ObjectRepository.Driver.FindElement(By.Id("iframeResult")));
             ButtonHelper.ClickButton(By.CssSelector("body > button:nth-child(2)"));
-            ObjectRepositiry.Driver.SwitchTo().DefaultContent();
+            ObjectRepository.Driver.SwitchTo().DefaultContent();
             //BrowserHelper.SwitchToParent();
 
         }

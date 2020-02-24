@@ -17,10 +17,10 @@ namespace FrameWorkSetUp.TestScript.WebElement
         [TestMethod]
         public void GetElement()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             try
             {
-                ReadOnlyCollection<IWebElement> col = ObjectRepositiry.Driver.FindElements(By.TagName("input"));
+                ReadOnlyCollection<IWebElement> col = ObjectRepository.Driver.FindElements(By.TagName("input"));
                 Console.WriteLine("Size : {0}", col.Count);
                 Console.WriteLine("Size : {0}", col.ElementAt(0));
                 //ObjectRepositiry.Driver.FindElement(By.TagName("input"));

@@ -26,9 +26,9 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
         public void TestDynamicWait()
         {
             NavigationHelper.NavigateToUrl("https://www.udemy.com/courses/");
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 
-            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, TimeSpan.FromSeconds(50));
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(50));
             wait.PollingInterval = TimeSpan.FromMilliseconds(250);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
             //Console.WriteLine(wait.Until(WaitforTitile()));
@@ -43,9 +43,9 @@ namespace FrameWorkSetUp.TestScript.WebDriverWaits
         public void TestExpCondition()
         {
             NavigationHelper.NavigateToUrl("https://www.udemy.com/courses/");
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 
-            WebDriverWait wait = new WebDriverWait(ObjectRepositiry.Driver, TimeSpan.FromSeconds(50));
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, TimeSpan.FromSeconds(50));
             wait.PollingInterval = TimeSpan.FromMilliseconds(250);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
             wait.Until(ExpectedConditions.ElementExists(By.Id("search-field-home"))).SendKeys("HTML");

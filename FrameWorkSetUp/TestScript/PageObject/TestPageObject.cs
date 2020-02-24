@@ -18,10 +18,10 @@ namespace FrameWorkSetUp.TestScript.PageObject
         [TestMethod]
         public void TestPage()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            HomePage homepage = new HomePage(ObjectRepositiry.Driver);
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            HomePage homepage = new HomePage(ObjectRepository.Driver);
             LoginPage loginPage = homepage.NavigateToLogin();
-            BugDetail bugDetail = loginPage.Login(ObjectRepositiry.config.GetUsername(), ObjectRepositiry.config.GetPassword());
+            BugDetail bugDetail = loginPage.Login(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
             bugDetail.SelectFromSeverity("trivial");
             ButtonHelper.ClickButton(By.XPath("//*[@id='header']/ul[1]/li[10]/a"));
 

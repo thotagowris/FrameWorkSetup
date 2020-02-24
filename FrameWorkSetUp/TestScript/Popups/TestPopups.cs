@@ -29,7 +29,7 @@ namespace FrameWorkSetUp.TestScript.Popups
             //IAlert alert = ObjectRepositiry.Driver.SwitchTo().Alert();
             //var text = alert.Text;
             //alert.Accept();
-            ObjectRepositiry.Driver.SwitchTo().DefaultContent();
+            ObjectRepository.Driver.SwitchTo().DefaultContent();
             //TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
             //TextBoxHelper.TypeInTextBox(By.Id("textareaCode"), text);
         }
@@ -52,7 +52,7 @@ namespace FrameWorkSetUp.TestScript.Popups
             Thread.Sleep(2000);
             JavaScriptPopHelper.ClickCancelOnPopup();
             Thread.Sleep(2000);
-            ObjectRepositiry.Driver.SwitchTo().DefaultContent();
+            ObjectRepository.Driver.SwitchTo().DefaultContent();
             //IAlert reject = ObjectRepositiry.Driver.SwitchTo().Alert();
             //reject.Dismiss();
             //TextBoxHelper.ClearTextBox(By.CssSelector(".CodeMirror"));

@@ -17,10 +17,10 @@ namespace FrameWorkSetUp.TestScript.FindElements
         [TestMethod]
         public void GetAllElements()
         {
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            ReadOnlyCollection<IWebElement> elements = ObjectRepositiry.Driver.FindElements(By.XPath("//input"));
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            ReadOnlyCollection<IWebElement> elements = ObjectRepository.Driver.FindElements(By.XPath("//input"));
             Console.WriteLine("Count of Elements : {0}", elements.Count);
-            ReadOnlyCollection<IWebElement> elements2 = ObjectRepositiry.Driver.FindElements(By.Id("123"));
+            ReadOnlyCollection<IWebElement> elements2 = ObjectRepository.Driver.FindElements(By.Id("123"));
             foreach (var element in elements)
             {
                 Console.WriteLine("Value : {0}", element.GetAttribute("id"));

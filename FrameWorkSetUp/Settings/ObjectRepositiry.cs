@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FrameWorkSetUp.Settings
 {
-    public class ObjectRepositiry
+    public class ObjectRepository
     {
-        public static IConfig config {get; set;}
+        public static IConfig Config {get; set;}
         public static IWebDriver Driver {get; set; }
 
     }

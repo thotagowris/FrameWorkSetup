@@ -11,7 +11,7 @@ namespace FrameWorkSetUp.ComponentHelper
     {
         public static string GetTitle()
         {
-            return ObjectRepositiry.Driver.Title;
+            return ObjectRepository.Driver.Title;
         }
     }
 }

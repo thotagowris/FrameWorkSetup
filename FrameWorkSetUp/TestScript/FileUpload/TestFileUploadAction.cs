@@ -22,14 +22,14 @@ namespace FrameWorkSetUp.TestScript.FileUpload
         {
             //[TestMethod, TestCategory("Smoke")]
         
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
             ButtonHelper.ClickButton(By.Id("enter_bug"));
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepositiry.config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepositiry.config.GetPassword());
+            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
             ButtonHelper.ClickButton(By.Id("log_in"));
             //ButtonHelper.ClickButton(By.LinkText("Testng"));
             ButtonHelper.ClickButton(By.CssSelector("#attachment_false > input:nth-child(1)"));
-            IWebElement elem = ObjectRepositiry.Driver.FindElement(By.XPath("//*[@id='data']"));
+            IWebElement elem = ObjectRepository.Driver.FindElement(By.XPath("//*[@id='data']"));
             // Mention the path of file to do the upload
             elem.SendKeys(@"C:\Development\Repos\FrameWorkSetUp\FrameWorkSetUp\Resources\ExcelData.xlsx");
             ////GenericHelper.WaitForWebElement(By.CssSelector("data"), TimeSpan.FromSeconds(30));

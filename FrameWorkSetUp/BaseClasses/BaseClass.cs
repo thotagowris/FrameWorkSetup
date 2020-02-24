@@ -58,38 +58,38 @@ namespace FrameWorkSetUp.BaseClasses
         [AssemblyInitialize]
         public static void InitWebDriver(TestContext tc)
         {
-            ObjectRepositiry.config = new AppConfigReader();
+            ObjectRepository.Config = new AppConfigReader();
 
-            switch (ObjectRepositiry.config.GetBrowser())
+            switch (ObjectRepository.Config.GetBrowser())
             {
                 case BrowserType.Chrome:
-                    ObjectRepositiry.Driver = GetChromeDriver();
+                    ObjectRepository.Driver = GetChromeDriver();
                     break;
                 case BrowserType.Firefox:
-                    ObjectRepositiry.Driver = GetFirefoxDriver();
+                    ObjectRepository.Driver = GetFirefoxDriver();
                     break;
                 case BrowserType.IExplorer:
-                    ObjectRepositiry.Driver = GetIEDriver();
+                    ObjectRepository.Driver = GetIEDriver();
                     break;
                 default:
-                    throw new NoSutiableDriverFound("Driver Not Found : " + ObjectRepositiry.config.GetBrowser().ToString());
+                    throw new NoSutiableDriverFound("Driver Not Found : " + ObjectRepository.Config.GetBrowser().ToString());
             }
-            NavigationHelper.NavigateToUrl(ObjectRepositiry.config.GetWebsite());
-            ObjectRepositiry.Driver.Manage().Timeouts().PageLoad =
-                TimeSpan.FromSeconds(ObjectRepositiry.config.GetPageLoadTimeout());
+            NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
+            ObjectRepository.Driver.Manage().Timeouts().PageLoad =
+                TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeout());
 
-            ObjectRepositiry.Driver.Manage().Timeouts().ImplicitWait = 
-                TimeSpan.FromSeconds(ObjectRepositiry.config.GetElementLoadTimeout());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = 
+                TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeout());
             BrowserHelper.BrowserMaximize();
         }
 
         [AssemblyCleanup]
         public static void TearDown()
         {
-            if(ObjectRepositiry.Driver != null)
+            if(ObjectRepository.Driver != null)
             {
-                ObjectRepositiry.Driver.Close();
-                ObjectRepositiry.Driver.Quit();
+                ObjectRepository.Driver.Close();
+                ObjectRepository.Driver.Quit();
             }
         }
     }

@@ -23,9 +23,9 @@ namespace FrameWorkSetUp.PageObject
 
         public BugDetail Login(string username, string password)
         {
-            ObjectRepositiry.Driver.FindElement(LoginTextBox).SendKeys(username);
-            ObjectRepositiry.Driver.FindElement(PassTextBox).SendKeys(password);
-            ObjectRepositiry.Driver.FindElement(LoginButton).Click();
+            ObjectRepository.Driver.FindElement(LoginTextBox).SendKeys(username);
+            ObjectRepository.Driver.FindElement(PassTextBox).SendKeys(password);
+            ObjectRepository.Driver.FindElement(LoginButton).Click();
             return new BugDetail(driver);
 
         }
@@ -34,7 +34,7 @@ namespace FrameWorkSetUp.PageObject
         #region Navigation
         public void NavigateToHome()
         {
-            ObjectRepositiry.Driver.FindElement(HomeLink).Click();
+            ObjectRepository.Driver.FindElement(HomeLink).Click();
         }
         #endregion
     }
